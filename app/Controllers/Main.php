@@ -18,6 +18,11 @@ class Main extends BaseController
     {
         $model = new Bundesland();
         $seznamZemi = $model->orderBy("name", "asc")->findAll();
-        var_dump($seznamZemi);
+        
+        $data = [
+            "seznamZemi" => $seznamZemi
+        ];
+
+        return view("seznamZemi", $data);
     }
 }
